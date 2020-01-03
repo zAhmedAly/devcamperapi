@@ -45,7 +45,7 @@ Extensive documentation with examples [here](https://documenter.getpostman.com/v
 > echo "# devcamperapi" >> README.md
 > git init
 > git add README.md
-> git commit -m "first commit"
+> git commit -m "first commit">
 > git remote add origin https://github.com/zAhmedAly/devcamperapi.git
 > git push -u origin master
 
