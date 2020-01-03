@@ -43,3 +43,14 @@ Extensive documentation with examples [here](https://documenter.getpostman.com/v
 - Version: 1.0.0
 - License: MIT
 - Author: Brad Traversy
+
+…or create a new repository on the command line
+echo "# devcamperapi" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/zAhmedAly/devcamperapi.git
+git push -u origin master
+…or push an existing repository from the command line
+git remote add origin https://github.com/zAhmedAly/devcamperapi.git
+git push -u origin master
