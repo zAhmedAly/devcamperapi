@@ -23,11 +23,7 @@
     "helmet": "^3.21.2",
     "hpp": "^0.2.3",
     "jsonwebtoken": "^8.5.1",
-<<<<<<< HEAD
-    "mongoose": "^5.8.7",
-=======
     "mongoose": "^5.8.9",
->>>>>>> f130d7f17bcbc5ad777382af7de3f3dee2f32851
     "morgan": "^1.9.1",
     "node-geocoder": "^3.25.0",
     "nodemailer": "^6.4.2",
