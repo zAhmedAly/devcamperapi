@@ -9,6 +9,21 @@ const Bootcamp = require('../models/Bootcamp');
 // @access    Public
 exports.getCourses = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
+    const bootcamp = await Bootcamp.findById(req.params.bootcampId).select(
+      'name averageRating photo'
+    );
+
+    if (!bootcamp) {
+      return next(
+        new ErrorResponse(
+          `No bootcamp with the id of ${req.params.bootcampId}`,
+          404
+        )
+      );
+    }
+
+    console.log(' courses bootcamp = ', bootcamp);
+
     const courses = await Course.find({ bootcamp: req.params.bootcampId });
 
     return res.status(200).json({

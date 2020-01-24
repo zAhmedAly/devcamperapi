@@ -10,7 +10,7 @@ const Bootcamp = require('../models/Bootcamp');
 exports.getReviews = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
     const bootcamp = await Bootcamp.findById(req.params.bootcampId).select(
-      'name averageRating'
+      'name averageRating photo'
     );
 
     if (!bootcamp) {
@@ -22,7 +22,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
       );
     }
 
-    console.log('bootcamp = ', bootcamp);
+    console.log(' reviews bootcamp = ', bootcamp);
 
     const reviews = await Review.find({
       bootcamp: req.params.bootcampId
