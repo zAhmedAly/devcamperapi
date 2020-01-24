@@ -19,7 +19,7 @@ router
   .get(
     advancedResults(Course, {
       path: 'bootcamp',
-      select: 'name description'
+      select: 'name description photo'
     }),
     getCourses
   )

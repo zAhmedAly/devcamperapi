@@ -19,7 +19,7 @@ router
   .get(
     advancedResults(Review, {
       path: 'bootcamp',
-      select: 'name description'
+      select: 'name description photo'
     }),
     getReviews
   )

@@ -42,6 +42,7 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
       count: reviews.length,
       bootcampName: bootcamp.name,
       averageRating: bootcamp.averageRating,
+      photo: bootcamp.photo,
       data: reviews
     });
   } else {

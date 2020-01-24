@@ -29,6 +29,9 @@ exports.getCourses = asyncHandler(async (req, res, next) => {
     return res.status(200).json({
       success: true,
       count: courses.length,
+      bootcampName: bootcamp.name,
+      averageRating: bootcamp.averageRating,
+      photo: bootcamp.photo,
       data: courses
     });
   } else {
