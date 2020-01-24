@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const chalk = require('chalk');
 
 const connectDB = async () => {
   const conn = await mongoose.connect(process.env.MONGO_URI, {
@@ -8,7 +9,13 @@ const connectDB = async () => {
     useUnifiedTopology: true
   });
 
-  console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+  // console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+
+  console.log(
+    chalk.white.underline.bold.bgGreen(
+      `MongoDB Connected: ${conn.connection.host}`
+    )
+  );
 };
 
 module.exports = connectDB;
