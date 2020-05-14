@@ -10,7 +10,7 @@ const Bootcamp = require('../models/Bootcamp');
 exports.getReviews = asyncHandler(async (req, res, next) => {
   if (req.params.bootcampId) {
     const bootcamp = await Bootcamp.findById(req.params.bootcampId).select(
-      'name averageRating photo'
+      'name averageRating photo location.state location.city location.zipcode careers'
     );
 
     if (!bootcamp) {
@@ -43,6 +43,10 @@ exports.getReviews = asyncHandler(async (req, res, next) => {
       bootcampName: bootcamp.name,
       averageRating: bootcamp.averageRating,
       photo: bootcamp.photo,
+      state: bootcamp.location.state,
+      city: bootcamp.location.city,
+      zipcode: bootcamp.location.zipcode,
+      careers: bootcamp.careers,
       data: reviews
     });
   } else {
