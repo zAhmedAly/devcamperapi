@@ -146,6 +146,27 @@ exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
   });
 });
 
+// @desc      Get bootcamps within a radius
+// @route     GET /api/v1/bootcamps/user/:userid
+// @access    Private
+exports.getBootcampUserId = asyncHandler(async (req, res, next) => {
+  const { userid } = req.params;
+
+  const bootcamp = await Bootcamp.findOne({user: userid}) ;
+
+  if (!bootcamp) {
+    return next(
+      new ErrorResponse(`Bootcamp not found for userId ${req.params.userid}`, 404)
+    );
+  }
+
+  res.status(200).json({
+    success: true,
+    count: bootcamp.length,
+    data: bootcamp._id
+  });
+});
+
 // @desc      Upload photo for bootcamp
 // @route     PUT /api/v1/bootcamps/:id/photo
 // @access    Private
